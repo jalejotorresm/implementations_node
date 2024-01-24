@@ -1,14 +1,16 @@
 const input = require("input");
 
 const set_numero = async () => {
-  let numero = parseInt(
+  console.log("");
+  let numero = Number(
     await input.text("Dame un numero entero positivo para continuar:\n")
   );
 
   const verifier = /^[0-9]+$/;
 
   while (!verifier.test(numero)) {
-    numero = parseInt(
+    console.log("");
+    numero = Number(
       await input.text(
         "Respuesta errada. Dame un numero entero positivo por favor:\n"
       )

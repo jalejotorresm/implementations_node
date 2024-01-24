@@ -1,10 +1,18 @@
 const set_numero = require("./set_numero");
 
-const set_factorial = () => {};
+const set_factorial = (num) => {
+  let resultado = 1n;
 
-const print_factorial = () => {
-  set_numero();
-  set_factorial();
+  for (let i = 2n; i <= BigInt(num); i++) {
+    resultado *= i;
+  }
+
+  console.log(`\nEl factorial de ${num} es: ${resultado}\n`);
+};
+
+const print_factorial = async () => {
+  const prueba = BigInt(await set_numero());
+  set_factorial(prueba);
 };
 
 module.exports = print_factorial;
