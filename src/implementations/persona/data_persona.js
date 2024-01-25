@@ -1,3 +1,5 @@
+const { input } = require("@inquirer/prompts");
+
 class Persona {
   constructor(name, edad) {
     this.name = name;
@@ -10,27 +12,12 @@ class Persona {
     );
   }
 
-  set_data() {
-    let preguntas = ["Dime tu nombre:", "Dime tu edad:"];
+  async set_data() {
+    this.name = await input({ message: "Dime tu nombre:\n" });
+    console.log();
+    this.edad = await input({ message: "Dime tu edad:\n" });
 
-    let respuestas = [];
-
-    let pregunta = (i) => console.log(`\n${preguntas[i]}`);
-
-    process.stdin.on("data", (data) => {
-      respuestas.push(data.toString().trim());
-
-      if (respuestas.length < preguntas.length) {
-        pregunta(respuestas.length);
-      } else {
-        this.name = respuestas[0];
-        this.edad = Number(respuestas[1]);
-        this.saludar();
-        process.exit();
-      }
-    });
-
-    pregunta(0);
+    this.saludar();
   }
 }
 
