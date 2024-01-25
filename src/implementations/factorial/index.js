@@ -1,8 +1,6 @@
-const print_factorial = require("./set_factorial");
+const { print_factorial } = require("./set_factorial");
 
-const factorial = () => {
+exports.factorial = () => {
   process.stdout.write("\n--- Calculadora de Factoriales ---\n");
   print_factorial();
 };
-
-module.exports = factorial;

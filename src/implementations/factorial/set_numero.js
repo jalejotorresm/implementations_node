@@ -1,9 +1,9 @@
-const input = require("input");
+const { input } = require("@inquirer/prompts");
 
-const set_numero = async () => {
+exports.set_numero = async () => {
   console.log("");
   let numero = Number(
-    await input.text("Dame un numero entero positivo para continuar:\n")
+    await input({ message: "Dame un numero entero positivo para continuar:\n" })
   );
 
   const verifier = /^[0-9]+$/;
@@ -11,13 +11,12 @@ const set_numero = async () => {
   while (!verifier.test(numero)) {
     console.log("");
     numero = Number(
-      await input.text(
-        "Respuesta errada. Dame un numero entero positivo por favor:\n"
-      )
+      await input({
+        message:
+          "Respuesta errada. Dame un numero entero positivo por favor:\n",
+      })
     );
   }
 
   return numero;
 };
-
-module.exports = set_numero;
