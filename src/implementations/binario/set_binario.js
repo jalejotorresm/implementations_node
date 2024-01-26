@@ -1,7 +1,14 @@
 const { set_decimal } = require("./set_decimal");
 
-exports.set_binario = async () => {
-  let array = await set_decimal();
+exports.set_binario = async (dec_array) => {
+  let base = dec_array[0];
+  let numero = dec_array[1];
+  let binario = "";
 
-  return array;
+  while (base > 0) {
+    binario = (base % 2) + binario;
+    base = Math.floor(base / 2);
+  }
+
+  console.log(`El numero ${numero} en binario es: ${binario}`);
 };
