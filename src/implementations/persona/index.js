@@ -1,7 +1,7 @@
 const Persona = require("./data_persona.js");
 
 exports.persona = () => {
-  console.log("\n--- Implementacion Objetos y Metodos ---");
+  console.log("\n--- Implementacion Objetos y Metodos ---\n");
 
   let humano = new Persona("", 0);
 

@@ -6,9 +6,10 @@ exports.secuencia = async () => {
   const regex = /^[0-9]+$/;
 
   while (!regex.test(base)) {
+    console.log();
     base = await input({
       message:
-        "Informacion errada. Necesito un numero positivo para continuar: ",
+        "Informacion errada. Necesito un numero positivo para continuar:\n",
     });
   }
 
