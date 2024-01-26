@@ -10,5 +10,5 @@ exports.set_binario = async (dec_array) => {
     base = Math.floor(base / 2);
   }
 
-  console.log(`El numero ${numero} en binario es: ${binario}`);
+  console.log(`\nEl numero ${numero} en binario es: ${binario}\n`);
 };

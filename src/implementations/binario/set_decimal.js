@@ -1,11 +1,12 @@
 const { input } = require("@inquirer/prompts");
 
 exports.set_decimal = async () => {
-  let numero = await input({ message: "Ingresa el numero a convertir:" });
+  let numero = await input({ message: "Ingresa el numero a convertir:\n" });
 
   while (!/^[0-9]+$/.test(numero)) {
     numero = await input({
-      message: "Informacion incorrecta. Ingresa un numero positivo por favor:",
+      message:
+        "Informacion incorrecta. Ingresa un numero positivo por favor:\n",
     });
   }
 
